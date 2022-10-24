@@ -29,6 +29,12 @@ public class HioMember {
 		this.memberGrade = memberGrade;
 	}
 	
+	// 생성자 - HioUpdateController -> memberUpdate() 구절에 사용
+	public HioMember(int reservNo2, int hallNo2, String reservTime2) {
+	
+	}
+	
+	
 	public int getMemberNo() {
 		return memberNo;
 	}
