@@ -16,6 +16,19 @@ public class HioMember {
 	private String hallResvYN; /* 예약가능여부 */
 	private int hallTime; /* 예약가능시간 */
 	
+	// 생성자 - HioMemberDeleteDao -> selectToDelete()에서 사용
+	public HioMember(int memberNo, String memberName, String memberAddress, String memberPhone, String memberId,
+			String memberPwd, int memberGrade) {
+		super();
+		this.memberNo = memberNo;
+		this.memberName = memberName;
+		this.memberAddress = memberAddress;
+		this.memberPhone = memberPhone;
+		this.memberId = memberId;
+		this.memberPwd = memberPwd;
+		this.memberGrade = memberGrade;
+	}
+	
 	public int getMemberNo() {
 		return memberNo;
 	}
