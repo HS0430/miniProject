@@ -6,7 +6,8 @@ import hio.controller.*;
 public class HioMain {
 
 	public static Scanner sc = new Scanner(System.in);
-
+	public static HioSelectController select = new HioSelectController();
+	
 	public static void main(String[] args) {
 
 		while (true) {
@@ -17,8 +18,9 @@ public class HioMain {
 
 			switch (selectMainNo) {
 			case 1:
-				int result = new HioSelectController().memberLogin();
-				if (result == 0) {
+				int result = select.memberLogin();
+				System.out.println(result);
+				if (result == 1) {
 					hioMemberMenu();
 					int selectMemberNo = Integer.parseInt(sc.nextLine());
 					switch (selectMemberNo) {
