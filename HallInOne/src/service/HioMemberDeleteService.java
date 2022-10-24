@@ -2,12 +2,12 @@ package service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import hio.DAO.HioDeleteDAO;
+import hio.DAO.HioMemberDeleteDAO;
 import util.HioConnection;
 
-public class HioDeleteService {
+public class HioMemberDeleteService {
 	
-	HioDeleteDAO dao = new HioDeleteDAO();
+	HioMemberDeleteDAO dao = new HioMemberDeleteDAO();
 	
 	public int memberDelete(String delName) {
 		

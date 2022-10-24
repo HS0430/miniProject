@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 import hio.domain.HioMember;
 
-public class HioDeleteDAO {
+public class HioMemberDeleteDAO {
 	
 	public int memberDelete(Connection conn, String delName) throws SQLException {
 
