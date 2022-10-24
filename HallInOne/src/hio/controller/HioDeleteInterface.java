@@ -1,4 +1,4 @@
-package hio.deletecontroller;
+package hio.controller;
 
 public interface HioDeleteInterface {
 
