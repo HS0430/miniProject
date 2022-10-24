@@ -1,5 +1,10 @@
 package hio.controller;
 
-public class HioUpdateController implements HioDeleteInterface {
+public class HioUpdateController implements HioUpdateInterface {
 
+	public void process() {
+		
+		
+	}
+	
 }

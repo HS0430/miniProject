@@ -1,5 +1,5 @@
 package hio.controller;
 
-public class HioSelectController implements HioDeleteInterface {
+public class HioSelectController implements HioSelectInterface {
 
 }
