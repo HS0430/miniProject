@@ -1,8 +1,6 @@
 package hio.controller;
 
 import java.util.Scanner;
-
-import hio.DAO.OracleMemDeleteDao;
 import service.HioDeleteService;
 import service.HioInsertService;
 
