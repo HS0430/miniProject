@@ -4,7 +4,7 @@ public class HioMember {
 
 	private int memberNo; /* 회원번호 */
 	private String memberName; /* 회원명 */
-	private String memberAddres; /* 회원주소 */
+	private String memberAddress; /* 회원주소 */
 	private String memberPhone; /* 회원전화번호 */
 	private String memberId; /* 회원ID */
 	private String memberPwd; /* 회원PWD */
@@ -28,11 +28,11 @@ public class HioMember {
 	public void setMemberName(String memberName) {
 		this.memberName = memberName;
 	}
-	public String getMemberAddres() {
-		return memberAddres;
+	public String getMemberAddress() {
+		return memberAddress;
 	}
-	public void setMemberAddres(String memberAddres) {
-		this.memberAddres = memberAddres;
+	public void setMemberAddress(String memberAddres) {
+		this.memberAddress = memberAddres;
 	}
 	public String getMemberPhone() {
 		return memberPhone;

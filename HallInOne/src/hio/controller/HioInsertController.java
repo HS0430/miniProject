@@ -3,9 +3,13 @@ package hio.controller;
 import java.util.Scanner;
 
 import hio.HioMain;
+import hio.domain.HioMember;
+import service.HioInsertService;
 
 public class HioInsertController implements HioInsertInterface {
 
+	HioMember hioMember = new HioMember();
+	
 	Scanner sc = new Scanner(System.in);
 	public void memberInsert() {
 		
@@ -22,6 +26,16 @@ public class HioInsertController implements HioInsertInterface {
 		System.out.print("회원 전화번호 입력 >>");
 		String memberPhone = sc.nextLine();
 		
+		hioMember.setMemberId(memberId);
+		hioMember.setMemberPwd(memberPwd);
+		hioMember.setMemberName(memberName);
+		hioMember.setMemberAddress(memberAddress);
+		hioMember.setMemberPhone(memberPhone);
+		
+		int result = new HioInsertService().memberInsert(hioMember);
+		
+		
+		System.out.println(result);
 		
 		
 		
