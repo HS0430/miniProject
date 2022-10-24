@@ -24,4 +24,4 @@ hs_err_pid*
 replay_pid*
 HallInOne/.classpath
 
-*.
+.classpath
