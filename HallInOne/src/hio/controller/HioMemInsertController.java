@@ -44,9 +44,13 @@ public class HioMemInsertController {
 		System.out.print("회원 등급: >> ");
 		int membergrade = Integer.parseInt(sc.nextLine());
 		
-		HioMember hioMem = new HioMember(membergrade, membername, memberaddres, memberphone, memberphone, memberpwd, memberpwd);
+		HioMember hioMem = new HioMember();
 		
-		int result = service.memInsert(hioMem);
+		hioMem.setMemberNo(membercd);
+		
+//		int result = service.memInsert(hioMem);
+		
+		int result = 0;
 		
 		if (result > 0) {
 			System.out.println("신규 등록 완료!");
