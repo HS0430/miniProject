@@ -29,7 +29,7 @@ public class HioInsertController implements HioInsertInterface {
 		hioMember.setMemberId(memberId);
 		hioMember.setMemberPwd(memberPwd);
 		hioMember.setMemberName(memberName);
-		hioMember.setMemberAddres(memberAddress);
+		hioMember.setMemberAddress(memberAddress);
 		hioMember.setMemberPhone(memberPhone);
 		
 		int result = new HioInsertService().memberInsert(hioMember);

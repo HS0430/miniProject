@@ -8,18 +8,21 @@ import hio.domain.HioMember;
 
 public class HioInsertDao {
 
-	public int insert(Connection conn, HioMember hioMember) throws SQLException {
+	public int memberInsert(Connection conn, HioMember hioMember) throws SQLException {
 		
 		int result = 0;
 		PreparedStatement pstmt = null;
 		// 입력 처리
-		String sql = "INSERT INTO dept VALUES(?, ?, ?)";
+		String sql = "INSERT INTO MEMBER VALUES(MEMBERNO_SEQ.nextval, ?, ?, ?, ?, ?, ?)";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
-//			pstmt.setInt(1, hioMember.getDeptno());
-//			pstmt.setString(2, hioMember.getDname());
-//			pstmt.setString(3, hioMember.getLoc());
+			pstmt.setString(1, hioMember.getMemberName());
+			pstmt.setString(2, hioMember.getMemberAddress());
+			pstmt.setString(3, hioMember.getMemberPhone());
+			pstmt.setString(4, hioMember.getMemberId());
+			pstmt.setString(5, hioMember.getMemberPwd());
+			pstmt.setInt(6, 1);
 //			
 			result = pstmt.executeUpdate();
 		}finally {

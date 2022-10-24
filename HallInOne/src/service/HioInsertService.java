@@ -18,7 +18,7 @@ public class HioInsertService {
 
 		try {
 			conn = HioConnection.getConnection();
-			result = dao.insert(conn, hioMember);
+			result = dao.memberInsert(conn, hioMember);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
