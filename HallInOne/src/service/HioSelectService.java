@@ -10,34 +10,7 @@ import util.HioConnection;
 public class HioSelectService {
 	
 	HioSelectDAO dao = new HioSelectDAO();
-
-	
-	public HioMember selectByDeptno(String MemberId) {
 		
-		HioMember hioMember = null;
-		Connection conn = null;
-		
-		try {
-			conn = HioConnection.getConnection();
-			hioMember = dao.memberAll(conn, MemberId);
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			if(conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
-		}
-		
-		return hioMember;
-		
-	}
-
-	
 	public int memberLogin(HioMember hioMember) {
 		
 		int result = 0;
