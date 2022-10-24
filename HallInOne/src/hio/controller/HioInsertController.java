@@ -3,9 +3,12 @@ package hio.controller;
 import java.util.Scanner;
 
 import hio.HioMain;
+import hio.domain.HioMember;
 
 public class HioInsertController implements HioInsertInterface {
 
+	HioMember member = new HioMember();
+	
 	Scanner sc = new Scanner(System.in);
 	public void memberInsert() {
 		
