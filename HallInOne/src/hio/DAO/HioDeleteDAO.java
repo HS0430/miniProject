@@ -1,6 +1,5 @@
 package hio.DAO;
 
-<<<<<<< HEAD
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -29,8 +28,5 @@ public class HioDeleteDAO {
 
 		return result;
 	}
-=======
-public class HioDeleteDAO implements DeleteDAO{
->>>>>>> 79483a6e927b4c35e8013bb8482415215dcd7c0b
 
 }
