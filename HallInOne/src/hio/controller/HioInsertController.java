@@ -36,11 +36,6 @@ public class HioInsertController implements HioInsertInterface {
 		
 		
 		System.out.println(result);
-		
-		
-		
-		
-		
-		
+	
 	}
 }
