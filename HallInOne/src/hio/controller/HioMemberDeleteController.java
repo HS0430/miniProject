@@ -11,10 +11,10 @@ public class HioMemberDeleteController implements HioMemberDeleteInterface {
 	Scanner sc = new Scanner(System.in);
 
 	@Override
-	public void memberDelete() {
-
-		List<HioMember> allList = new HioMemberDeleteService().memberSelectToDelete();	
-
+	public int memberDelete() {
+		int step = 0;
+				
+		List<HioMember> allList = new HioMemberDeleteService().memberSelectToDelete();
 
 		System.out.println("회원 삭제를 진행합니다. ==>> ");
 		System.out.println("=============================== 현재 회원 리스트 ===============================");
@@ -38,7 +38,7 @@ public class HioMemberDeleteController implements HioMemberDeleteInterface {
 			String delName = sc.nextLine().trim();
 			
 			if (delName.equals("0")){
-				return;
+				return step;
 			}
 
 			for (int i=0; i<allList.size(); i++) {
@@ -76,6 +76,7 @@ public class HioMemberDeleteController implements HioMemberDeleteInterface {
 
 			}
 		}
+		return step;
 	}
 	
 }
