@@ -8,8 +8,9 @@ import hio.domain.HioMember;
 import util.HioConnection;
 
 public class HioSelectService {
-	HioSelectDAO dao = new HioSelectDAO();
 	
+	HioSelectDAO dao = new HioSelectDAO();
+		
 	public int memberLogin(HioMember hioMember) {
 		
 		int result = 0;
