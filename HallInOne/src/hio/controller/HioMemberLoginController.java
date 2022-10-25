@@ -2,12 +2,14 @@ package hio.controller;
 
 import java.util.Scanner;
 
+import hio.HioMain;
 import hio.domain.HioMember;
 import service.HioMemberLoginService;
 
 public class HioMemberLoginController implements HioMemberLoginInterface{
 
-	HioMember hioMember = new HioMember();
+//	HioMember hioMember = new HioMember();
+	HioMember hioMember = HioMain.hioMember;
 	Scanner sc = new Scanner(System.in);
 	
 	public int memberLogin() {
