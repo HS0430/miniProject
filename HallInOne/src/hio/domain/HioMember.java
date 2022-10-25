@@ -54,6 +54,16 @@ public class HioMember {
 		this.hallNo = hallNo;
 	}
 
+	
+	
+	public HioMember(int reservNo, String reservDate, int reservTime, int hallNo) {
+		super();
+		this.reservNo = reservNo;
+		this.reservDate = reservDate;
+		this.reservTime = reservTime;
+		this.hallNo = hallNo;
+	}
+
 	public int getMemberNo() {
 		return memberNo;
 	}

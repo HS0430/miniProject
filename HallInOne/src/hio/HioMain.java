@@ -3,7 +3,10 @@ package hio;
 import java.util.Scanner;
 import hio.controller.HioMemberLoginController;
 import hio.controller.HioReservInsertController;
+import hio.controller.HioUpdateController;
 import hio.domain.HioMember;
+import hio.controller.HioAllMemberController;
+import hio.controller.HioAllReservationController;
 import hio.controller.HioMemberDeleteController;
 import hio.controller.HioMemberInsertController;
 
@@ -38,7 +41,6 @@ public class HioMain {
 						if(reservResult<0) {
 							System.out.println(reservResult);
 						}
-						
 						break;
 					case 3:
 						break;
@@ -52,9 +54,11 @@ public class HioMain {
 					hioAdminMenu();
 					int selectAdminNo = Integer.parseInt(sc.nextLine());
 					switch (selectAdminNo) {
-					case 1:
+					case 1: // 회원 전체 정보 출력
+						new HioAllMemberController().allmember();
 						break;
-					case 2:
+					case 2: // 예약 정보 출력
+						new HioAllReservationController().allreservation();
 						break;
 					case 3:
 						new HioMemberDeleteController().memberDelete();

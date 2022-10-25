@@ -12,7 +12,6 @@ public class HioMemberDeleteController implements HioMemberDeleteInterface {
 
 	@Override
 	public int memberDelete() {
-		int step = 0;
 				
 		List<HioMember> allList = new HioMemberDeleteService().memberSelectToDelete();
 
@@ -38,7 +37,7 @@ public class HioMemberDeleteController implements HioMemberDeleteInterface {
 			String delName = sc.nextLine().trim();
 			
 			if (delName.equals("0")){
-				return step;
+				return 0;
 			}
 
 			for (int i=0; i<allList.size(); i++) {
@@ -76,7 +75,7 @@ public class HioMemberDeleteController implements HioMemberDeleteInterface {
 
 			}
 		}
-		return step;
+		return 0;
 	}
 	
 }
