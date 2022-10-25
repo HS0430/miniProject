@@ -58,6 +58,8 @@ public class HioMain {
 						break;
 					case 3:
 						new HioMemberDeleteController().memberDelete();
+						int s = new HioMemberDeleteController().memberDelete();
+						if (s==0) continue;
 						break;
 					case 4:
 						break;
