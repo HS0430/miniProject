@@ -15,6 +15,7 @@ public class HioMain {
 		while (true) {
 
 			hioMenu();
+			
 			System.out.print("메뉴 선택 >>  ");
 			int selectMainNo = Integer.parseInt(sc.nextLine());
 
