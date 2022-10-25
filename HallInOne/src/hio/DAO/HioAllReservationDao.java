@@ -11,10 +11,10 @@ import java.util.List;
 import hio.domain.HioMember;
 
 
-public class HioAllMemberDao implements AllMemberDao{
+public class HioAllReservationDao implements AllReservationDao{
 	
 	@Override
-	public List<HioMember> memberList(Connection conn) throws SQLException {
+	public List<HioMember> selectList(Connection conn) throws SQLException {
 
 		List<HioMember> list = new ArrayList<>();
 		Statement stmt = null;
@@ -23,7 +23,7 @@ public class HioAllMemberDao implements AllMemberDao{
 		try {
 			stmt = conn.createStatement();
 
-			String sql = "select * from member";
+			String sql = "select * from reservation";
 			rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {
@@ -43,18 +43,18 @@ public class HioAllMemberDao implements AllMemberDao{
 	}
 
 	@Override
-	public HioMember selectBymemberNo(Connection conn, int memberNo) throws SQLException {
+	public HioMember selectByreservNo(Connection conn, int reservNo) throws SQLException {
 
 		HioMember hiomember = null;
 
-		String sql = "select * from member where memberNo=?";
+		String sql = "select * from reservation where reservNo=?";
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, memberNo);
+			pstmt.setInt(1, reservNo);
 
 			rs = pstmt.executeQuery();
 
@@ -74,11 +74,9 @@ public class HioAllMemberDao implements AllMemberDao{
 	}
 
 	private HioMember rowToHioMember(ResultSet rs) throws SQLException {
-		return new HioMember
-				(rs.getInt("memberNo"), rs.getString("memberName"), rs.getString("memberAddress"),
-				rs.getString("memberPhone"),rs.getString("memberId"),rs.getString("memberPwd"),
-				rs.getInt("memberGrade"));
+		return new HioMember(rs.getInt("reservNo"), rs.getInt("reservTime"), rs.getInt("hallNo"));
+				
 	}
 
-	
+
 }
