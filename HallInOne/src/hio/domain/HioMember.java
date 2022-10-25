@@ -11,7 +11,7 @@ public class HioMember {
 	private int memberGrade; /* 회원등급(관리자0,회원1) */
 	private int reservNo; /* 예약번호 */
 	private String reservDate; /* 예약일자 */
-	private String reservTime; /* 예약시간 */
+	private int reservTime; /* 예약시간 */
 	private int hallNo; /* 홀번호 */	
 	private String hallResvYN; /* 예약가능여부 */
 	private int hallTime; /* 예약가능시간 */
@@ -93,10 +93,10 @@ public class HioMember {
 	public void setReservDate(String reservDate) {
 		this.reservDate = reservDate;
 	}
-	public String getReservTime() {
+	public int getReservTime() {
 		return reservTime;
 	}
-	public void setReservTime(String reservTime) {
+	public void setReservTime(int reservTime) {
 		this.reservTime = reservTime;
 	}
 	public int getHallNo() {
