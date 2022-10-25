@@ -11,8 +11,6 @@ public class HioMain {
 	public static Scanner sc = new Scanner(System.in);
 	public static HioMember hioMember = new HioMember();
 	
-//	public static HioMemberLoginController login = new HioMemberLoginController();
-	
 	public static void main(String[] args) {
 
 		while (true) {
@@ -64,7 +62,7 @@ public class HioMain {
 					}
 				}
 				break;
-			case 2:
+			case 2:	// 회원가입
 				new HioMemberInsertController().memberInsert();
 				break;
 			case 3:
