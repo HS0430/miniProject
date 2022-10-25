@@ -16,8 +16,6 @@ public class HioMember {
 	private String hallResvYN; /* 예약가능여부 */
 	private int hallTime; /* 예약가능시간 */
 	
-	
-	
 	public HioMember() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -38,7 +36,6 @@ public class HioMember {
 	
 	// 생성자 - HioUpdateController -> memberUpdate() 구절에 사용
 	public HioMember(int reservNo2, int hallNo2, String reservTime2) {}
-
 	
 	
 	public int getMemberNo() {

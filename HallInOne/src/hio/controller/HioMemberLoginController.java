@@ -3,7 +3,7 @@ package hio.controller;
 import java.util.Scanner;
 
 import hio.domain.HioMember;
-import service.HioSelectService;
+import service.HioMemberLoginService;
 
 public class HioMemberLoginController implements HioMemberLoginInterface{
 
@@ -11,6 +11,7 @@ public class HioMemberLoginController implements HioMemberLoginInterface{
 	Scanner sc = new Scanner(System.in);
 	
 	public int memberLogin() {
+			int result = -1;
 			
 			System.out.println("------------------------------------------------");
 			System.out.println("--------------------- 로그인 ---------------------");
@@ -23,7 +24,7 @@ public class HioMemberLoginController implements HioMemberLoginInterface{
 			hioMember.setMemberId(memberId);
 			hioMember.setMemberPwd(memberPwd);
 			
-			int result = new HioSelectService().memberLogin(hioMember);
+			result = new HioMemberLoginService().memberLogin(hioMember);
 			
 			return result;
 	}

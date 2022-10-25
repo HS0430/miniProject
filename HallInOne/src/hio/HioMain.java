@@ -7,6 +7,7 @@ import hio.controller.HioMemberInsertController;
 public class HioMain {
 
 	public static Scanner sc = new Scanner(System.in);
+	
 	public static HioMemberLoginController login = new HioMemberLoginController();
 	
 	public static void main(String[] args) {
@@ -19,7 +20,9 @@ public class HioMain {
 
 			switch (selectMainNo) {
 			case 1:
+			
 				int result = login.memberLogin();
+				
 				if (result == 1) {
 					hioMemberMenu();
 					int selectMemberNo = Integer.parseInt(sc.nextLine());
@@ -32,7 +35,12 @@ public class HioMain {
 						break;
 					case 4:
 						break;
+					case 5:
+						break;
 					}
+				}
+				else if(result == 0) {
+					hioAdminMenu();
 				}
 				break;
 			case 2:
