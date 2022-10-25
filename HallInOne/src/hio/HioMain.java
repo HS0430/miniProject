@@ -1,12 +1,13 @@
 package hio;
 
 import java.util.Scanner;
-import hio.controller.*;
+import hio.controller.HioMemberLoginController;
+import hio.controller.HioMemberInsertController;
 
 public class HioMain {
 
 	public static Scanner sc = new Scanner(System.in);
-	public static HioSelectController select = new HioSelectController();
+	public static HioMemberLoginController login = new HioMemberLoginController();
 	
 	public static void main(String[] args) {
 
@@ -18,8 +19,7 @@ public class HioMain {
 
 			switch (selectMainNo) {
 			case 1:
-				int result = select.memberLogin();
-				System.out.println(result);
+				int result = login.memberLogin();
 				if (result == 1) {
 					hioMemberMenu();
 					int selectMemberNo = Integer.parseInt(sc.nextLine());
@@ -78,6 +78,7 @@ public class HioMain {
 		System.out.println(" 2. 타석 예약");
 		System.out.println(" 3. 타석 예약 변경");
 		System.out.println(" 4. 타석 예약 취소");
+		System.out.println(" 5. 로그아웃");
 		System.out.println("------------------------------------------------");
 
 	}
