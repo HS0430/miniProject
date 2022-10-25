@@ -35,24 +35,29 @@ public class HioMemberDeleteController implements HioMemberDeleteInterface {
 
 		System.out.println("----------------------------");
 
-		System.out.println("위 리스트에서 삭제할 회원 이름을 입력해주세요. >> ");
-		String delName = sc.nextLine().trim();
+		while (true) {
+			System.out.println("위 리스트에서 삭제할 회원 이름을 입력해주세요. >> ");
+			String delName = sc.nextLine().trim();
 
-		for (int i=searchIndex[0]; i<searchIndex.length; i++) {
-			if (allList.get(i).getMemberName()==delName) {
-				
+			for (int i=0; i<allList.size(); i++) {
+
+				if (allList.get(i).getMemberName()==delName) {
+
+					int result = new HioMemberDeleteService().memberDelete(delName);
+
+					if (result > 0) {
+						System.out.println("회원 삭제 완료!");
+						break;
+					} else {
+						System.out.println("회원 삭제 실패!");
+					}
+
+				} else {
+					System.out.println("입력하신 회원이 존재하지 않습니다.");
+					break;
+				}
 			}
-		}
-		
-		
-		int result = new HioMemberDeleteService().memberDelete(delName);
-
-		if (result > 0) {
-			System.out.println("회원 삭제 완료!");
-		} else {
-			System.out.println("회원 삭제 실패!");
 		}
 
 	}
-
 }
