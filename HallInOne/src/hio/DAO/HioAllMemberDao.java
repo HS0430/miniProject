@@ -23,7 +23,7 @@ public class HioAllMemberDao implements AllMemberDao{
 		try {
 			stmt = conn.createStatement();
 
-			String sql = "select * from HioMember";
+			String sql = "select * from Member";
 			rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {
@@ -47,7 +47,7 @@ public class HioAllMemberDao implements AllMemberDao{
 
 		HioMember hiomember = null;
 
-		String sql = "select * from HioMember where memberNo=?";
+		String sql = "select * from Member where memberNo=?";
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
