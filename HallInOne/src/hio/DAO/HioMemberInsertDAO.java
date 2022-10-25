@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 import hio.domain.HioMember;
 
-public class HioInsertDAO {
+public class HioMemberInsertDAO {
 
 	public int memberInsert(Connection conn, HioMember hioMember) throws SQLException {
 		

@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 import hio.HioMain;
 import hio.domain.HioMember;
-import service.HioInsertService;
+import service.HioMemberInsertService;
 
-public class HioInsertController implements HioInsertInterface {
+public class HioMemberInsertController implements HioMemberInsertInterface {
 
 	HioMember hioMember = new HioMember();
 	
@@ -32,7 +32,7 @@ public class HioInsertController implements HioInsertInterface {
 		hioMember.setMemberAddress(memberAddress);
 		hioMember.setMemberPhone(memberPhone);
 		
-		int result = new HioInsertService().memberInsert(hioMember);
+		int result = new HioMemberInsertService().memberInsert(hioMember);
 		
 		
 		System.out.println(result);

@@ -3,13 +3,13 @@ package service;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import hio.DAO.HioInsertDAO;
+import hio.DAO.HioMemberInsertDAO;
 import hio.domain.HioMember;
 import util.HioConnection;
 
 
-public class HioInsertService {
-	HioInsertDAO dao = new HioInsertDAO();
+public class HioMemberInsertService {
+	HioMemberInsertDAO dao = new HioMemberInsertDAO();
 	
 	public int memberInsert(HioMember hioMember) {
 		
