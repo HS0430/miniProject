@@ -2,6 +2,7 @@ package service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 import hio.DAO.HioReservInsertDAO;
 import hio.domain.HioMember;
@@ -35,6 +36,81 @@ public class HioReservInsertService {
 		
 		return result;
 		
+	}
+	
+	public List<HioMember> selectHallList(){
+
+		List<HioMember> list = null;
+		Connection conn = null;
+		
+		try {
+			
+			conn = HioConnection.getConnection();
+			list = dao.selectHallList(conn);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return list;
+	}
+	
+	public HioMember selectHallTime(HioMember hioMember, int hallno){
+
+		List<HioMember> list = null;
+		Connection conn = null;
+		
+		try {
+			
+			conn = HioConnection.getConnection();
+			hioMember = dao.selectHallTime(conn, hioMember, hallno);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return hioMember;
+	}
+	
+	public List<HioMember> selectResvTimeList(int hallno){
+
+		List<HioMember> list = null;
+		Connection conn = null;
+		
+		try {
+			
+			conn = HioConnection.getConnection();
+			list = dao.selectResvTimeList(conn, hallno);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return list;
 	}
 	
 }
