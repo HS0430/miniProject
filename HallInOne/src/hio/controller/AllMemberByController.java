@@ -15,7 +15,7 @@ public class AllMemberByController implements HioAllMemberInterface{
 		
 		HioMember hiomember = service.selectBymemberNo(memberNo);
 		
-		System.out.println("검색 결과 =====================");
+		System.out.println("=============== 검색 결과 ===============");
 		if(hiomember != null) {
 			System.out.println(hiomember);
 		} else {

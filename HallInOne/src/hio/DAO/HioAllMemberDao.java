@@ -14,7 +14,7 @@ import hio.domain.HioMember;
 public class HioAllMemberDao implements AllMemberDao{
 	
 	@Override
-	public List<HioMember> selectList(Connection conn) throws SQLException {
+	public List<HioMember> memberList(Connection conn) throws SQLException {
 
 		List<HioMember> list = new ArrayList<>();
 		Statement stmt = null;
@@ -23,7 +23,7 @@ public class HioAllMemberDao implements AllMemberDao{
 		try {
 			stmt = conn.createStatement();
 
-			String sql = "select * from Member";
+			String sql = "select * from member";
 			rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {
@@ -47,7 +47,7 @@ public class HioAllMemberDao implements AllMemberDao{
 
 		HioMember hiomember = null;
 
-		String sql = "select * from Member where memberNo=?";
+		String sql = "select * from member where memberNo=?";
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

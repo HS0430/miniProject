@@ -16,14 +16,14 @@ public class HioAllMemberService {
 		this.allmemberdao = allmemberdao;
 	}
 
-	public List<HioMember> selectList() {
+	public List<HioMember> memberList() {
 
 		List<HioMember> list = null;
 		Connection conn = null;
 
 		try {
 			conn = HioConnection.getConnection();
-			list = allmemberdao.selectList(conn);
+			list = allmemberdao.memberList(conn);
 
 		} catch (SQLException e) {
 			// e.printStackTrace();

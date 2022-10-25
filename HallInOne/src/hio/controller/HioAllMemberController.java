@@ -13,7 +13,7 @@ public class HioAllMemberController implements HioAllMemberInterface{
 	
 	public void allmember() {
 						
-		List<HioMember> list = service.selectList();
+		List<HioMember> list = service.memberList();
 		
 		if(list != null && !list.isEmpty()) { 
 			

@@ -6,10 +6,10 @@ import java.util.List;
 
 import hio.domain.HioMember;
 
-
 public interface AllMemberDao {
 
-	List<HioMember> selectList(Connection conn) throws SQLException;
+	List<HioMember> memberList(Connection conn) throws SQLException;
+
 	HioMember selectBymemberNo(Connection conn, int memberNo) throws SQLException;
-		
+
 }
