@@ -9,9 +9,9 @@ import service.HioMemberDeleteService;
 public class HioMemberDeleteController implements HioMemberDeleteInterface {
 
 	Scanner sc = new Scanner(System.in);
-
+	
 	@Override
-	public void memberDeletet() {
+	public void memberDelete() {
 
 		List<HioMember> allList = new HioMemberDeleteService().memberSelectToDelete();
 
@@ -60,4 +60,8 @@ public class HioMemberDeleteController implements HioMemberDeleteInterface {
 		}
 
 	}
+	
+	
+	
+	
 }
