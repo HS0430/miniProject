@@ -36,7 +36,7 @@ public class HioMain {
 				}
 				break;
 			case 2:
-				new HioInsertController().memberInsert();
+				new HioMemberInsertController().memberInsert();
 				break;
 			case 3:
 				System.out.println("홀인원 (스크린 골프 예약 서비스)를 종료 합니다.");
