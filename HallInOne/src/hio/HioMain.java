@@ -3,6 +3,7 @@ package hio;
 import java.util.Scanner;
 import hio.controller.HioMemberLoginController;
 import hio.controller.HioReservInsertController;
+import hio.controller.HioUpdateController;
 import hio.domain.HioMember;
 import hio.controller.HioMemberDeleteController;
 import hio.controller.HioMemberInsertController;
@@ -38,7 +39,6 @@ public class HioMain {
 						if(reservResult<0) {
 							System.out.println(reservResult);
 						}
-						
 						break;
 					case 3:
 						break;
@@ -58,8 +58,6 @@ public class HioMain {
 						break;
 					case 3:
 						new HioMemberDeleteController().memberDelete();
-						int s = new HioMemberDeleteController().memberDelete();
-						if (s==0) continue;
 						break;
 					case 4:
 						break;
