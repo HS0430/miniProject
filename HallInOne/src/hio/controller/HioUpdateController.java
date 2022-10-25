@@ -26,7 +26,7 @@ public class HioUpdateController implements HioUpdateInterface {
 		if (result > 0) {
 			System.out.println("예약이 변경되었습니다.");
 		} else {
-			System.out.println("예약을 다시 변경해주세요.");
+			System.out.println("변경가능한 시간대를 다시 확인해주세요.");
 		}
 
 	}
