@@ -35,9 +35,12 @@ public class HioMember {
 	}
 	
 	// 생성자 - HioUpdateController -> memberUpdate() 구절에 사용
-	public HioMember(int reservNo2, int hallNo2, String reservTime2) {}
-	
-	
+	public HioMember(int reservNo, int reservTime, int hallNo) {
+		this.reservNo = reservNo;
+		this.reservTime = reservTime;
+		this.hallNo = hallNo;
+	}
+
 	public int getMemberNo() {
 		return memberNo;
 	}

@@ -19,7 +19,7 @@ public class HioUpdateController implements HioUpdateInterface {
 		int hallNo = Integer.parseInt(HioMain.sc.nextLine());
 
 		System.out.println("변경하실 예약시간을 입력해주세요 >> ");
-		String reservTime = HioMain.sc.nextLine();
+		int reservTime = Integer.parseInt(HioMain.sc.nextLine());
 
 		int result = service.memberUpdate(new HioMember(reservNo, hallNo, reservTime));
 
