@@ -41,6 +41,7 @@ public class HioMain {
 						}
 						break;
 					case 3:
+						new HioUpdateController().memberUpdate();
 						break;
 					case 4:
 						break;
