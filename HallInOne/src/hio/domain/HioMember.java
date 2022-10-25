@@ -14,7 +14,8 @@ public class HioMember {
 	private int reservTime; /* 예약시간 */
 	private int hallNo; /* 홀번호 */	
 	private String hallResvYN; /* 예약가능여부 */
-	private int hallTime; /* 예약가능시간 */
+	private int hallsTime; /* 예약가능 시작시간 */
+	private int halleTime; /* 예약가능 끝시간 */
 	
 	public HioMember() {
 		super();
@@ -114,12 +115,22 @@ public class HioMember {
 	public void setHallResvYN(String hallResvYN) {
 		this.hallResvYN = hallResvYN;
 	}
-	public int getHallTime() {
-		return hallTime;
+	public int getHallsTime() {
+		return hallsTime;
 	}
-	public void setHallTime(int hallTime) {
-		this.hallTime = hallTime;
+	public void setHallsTime(int hallsTime) {
+		this.hallsTime = hallsTime;
 	}
+	
+	public int getHalleTime() {
+		return halleTime;
+	}
+
+	public void setHalleTime(int halleTime) {
+		this.halleTime = halleTime;
+	}
+	
+	
 
 	
 }
