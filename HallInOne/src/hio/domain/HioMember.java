@@ -40,6 +40,18 @@ public class HioMember {
 		this.reservNo = reservNo;
 		this.reservTime = reservTime;
 		this.hallNo = hallNo;
+		
+		
+		
+	}
+
+	//생성자 - HioAllReservationDao -> 예약 정보 출력에 사용
+	public HioMember(String memberName, int reservNo, String reservDate, int reservTime, int hallNo) {
+		this.memberName = memberName;
+		this.reservNo = reservNo;
+		this.reservDate = reservDate;
+		this.reservTime = reservTime;
+		this.hallNo = hallNo;
 	}
 
 	public int getMemberNo() {

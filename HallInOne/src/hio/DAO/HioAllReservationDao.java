@@ -74,9 +74,10 @@ public class HioAllReservationDao implements AllReservationDao{
 	}
 
 	private HioMember rowToHioMember(ResultSet rs) throws SQLException {
-		return new HioMember(rs.getInt("reservNo"), rs.getInt("reservTime"), rs.getInt("hallNo"));
+		return new HioMember(rs.getString("memberName"),rs.getInt("reservNo"),
+				             rs.getString("reservDate"),rs.getInt("reservTime"),
+				             rs.getInt("hallNo"));
 				
 	}
-
 
 }
