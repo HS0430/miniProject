@@ -37,7 +37,7 @@ public class HioMemberDeleteController implements HioMemberDeleteInterface {
 			System.out.println("위 리스트에서 삭제할 회원 이름을 입력해주세요. (0:삭제 그만) >> ");
 			String delName = sc.nextLine().trim();
 			
-			if (Integer.parseInt(delName) == 0) {
+			if (delName.equals("0")){
 				return;
 			}
 
@@ -65,7 +65,7 @@ public class HioMemberDeleteController implements HioMemberDeleteInterface {
 							System.out.print(resultList.get(i).getMemberNo() + " | " +resultList.get(i).getMemberName() + " | " + resultList.get(i).getMemberPhone());
 							System.out.println();
 						}
-						continue;
+						//continue;
 					} else {
 						System.out.println("회원 삭제 실패!");
 					}
