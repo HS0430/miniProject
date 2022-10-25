@@ -37,14 +37,14 @@ public class HioMember {
 	}
 	
 	// 생성자 - HioUpdateController -> memberUpdate() 구절에 사용
-	public HioMember(int reservNo2, int hallNo2, String reservTime2) {
-	
-	}
+	public HioMember(int reservNo2, int hallNo2, String reservTime2) {}
+
 	
 	
 	public int getMemberNo() {
 		return memberNo;
 	}
+
 	public void setMemberNo(int memberNo) {
 		this.memberNo = memberNo;
 	}
