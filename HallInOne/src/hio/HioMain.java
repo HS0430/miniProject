@@ -52,20 +52,23 @@ public class HioMain {
 					}
 				}
 				else if(result == 0) {
-					hioAdminMenu();
-					int selectAdminNo = Integer.parseInt(sc.nextLine());
-					switch (selectAdminNo) {
-					case 1: // 회원 전체 정보 출력
-						new HioAllMemberController().allmember();
-						break;
-					case 2: // 예약 정보 출력
-						new HioAllReservationController().allreservation();
-						break;
-					case 3:
-						new HioMemberDeleteController().memberDelete();
-						break;
-					case 4:
-						break;
+					while (true) {
+						hioAdminMenu();
+						int selectAdminNo = Integer.parseInt(sc.nextLine());
+						switch (selectAdminNo) {
+						case 1: // 회원 전체 정보 출력
+							new HioAllMemberController().allmember();
+							break;
+						case 2: // 예약 정보 출력
+							new HioAllReservationController().allreservation();
+							break;
+						case 3:
+							int s = new HioMemberDeleteController().memberDelete();
+							if (s==0) continue;
+							break;
+						case 4:
+							break;
+						}
 					}
 				}
 				break;
