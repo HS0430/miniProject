@@ -16,18 +16,20 @@ public class HioMemberDeleteController implements HioMemberDeleteInterface {
 		List<HioMember> allList = new HioMemberDeleteService().memberSelectToDelete();	
 
 
-		System.out.println("== 회원 삭제를 진행합니다. ==");
-		System.out.println("===== 현재 회원 리스트 =====");
-
+		System.out.println("회원 삭제를 진행합니다. ==>> ");
+		System.out.println("=============================== 현재 회원 리스트 ===============================");
+		System.out.printf("회원번호\t|\t회원이름\t|\t전화번호\t\t|\t주소\t|\t아이디\n");
+		System.out.println("----------------------------------------------------------------------------");
+		
 		if (allList != null && !allList.isEmpty()) {
-
+			
 			for (int i=0; i<allList.size(); i++) {
-				System.out.print(allList.get(i).getMemberNo() + " | " +allList.get(i).getMemberName() + " | " + allList.get(i).getMemberPhone());
+				System.out.printf(allList.get(i).getMemberNo() + "\t|\t" +allList.get(i).getMemberName() + "\t|\t" + allList.get(i).getMemberPhone() + "\t|\t" + allList.get(i).getMemberAddress() + "\t|\t" + allList.get(i).getMemberId());
 				System.out.println();
 			}
 		}
 
-		System.out.println("----------------------------");
+		System.out.println("============================================================================");
 
 		boolean check = false;
 
