@@ -4,6 +4,7 @@ import java.util.Scanner;
 import hio.controller.HioMemberLoginController;
 import hio.controller.HioReservInsertController;
 import hio.domain.HioMember;
+import hio.controller.HioMemberDeleteController;
 import hio.controller.HioMemberInsertController;
 
 public class HioMain {
@@ -56,6 +57,7 @@ public class HioMain {
 					case 2:
 						break;
 					case 3:
+						new HioMemberDeleteController().memberDelete();
 						break;
 					case 4:
 						break;
