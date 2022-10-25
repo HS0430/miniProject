@@ -14,7 +14,7 @@ public class HioMemberLoginDAO implements MemberLoginDAO{
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		// 입력 처리
-		String sql = "SELECT membergrade FROM MEMBER WHERE MEMBERID=? AND MEMBERPWD=?";
+		String sql = "SELECT * FROM MEMBER WHERE MEMBERID=? AND MEMBERPWD=?";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -25,6 +25,9 @@ public class HioMemberLoginDAO implements MemberLoginDAO{
 			
 			if(rs.next()) {
 				result = rs.getInt("membergrade");
+				hioMember.setMemberNo(rs.getInt("memberno"));
+				hioMember.setMemberGrade(rs.getInt("membergrade"));
+				
 			}
 		}finally {
 			if(pstmt != null) {
