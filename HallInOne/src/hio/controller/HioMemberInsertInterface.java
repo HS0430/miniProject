@@ -1,6 +1,6 @@
 package hio.controller;
 
-public interface HioInsertInterface {
+public interface HioMemberInsertInterface {
 
 	public void memberInsert();
 }

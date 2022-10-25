@@ -1,29 +1,56 @@
 package hio;
 
 import java.util.Scanner;
-import hio.controller.*;
+import hio.controller.HioMemberLoginController;
+import hio.controller.HioReservInsertController;
+import hio.domain.HioMember;
+import hio.controller.HioMemberInsertController;
 
 public class HioMain {
 
 	public static Scanner sc = new Scanner(System.in);
-	public static HioSelectController select = new HioSelectController();
+	public static HioMember hioMember = new HioMember();
 	
 	public static void main(String[] args) {
 
 		while (true) {
 
 			hioMenu();
+			
 			System.out.print("메뉴 선택 >>  ");
 			int selectMainNo = Integer.parseInt(sc.nextLine());
 
 			switch (selectMainNo) {
 			case 1:
-				int result = select.memberLogin();
-				System.out.println(result);
+			
+				int result = new HioMemberLoginController().memberLogin();
+				
 				if (result == 1) {
 					hioMemberMenu();
 					int selectMemberNo = Integer.parseInt(sc.nextLine());
 					switch (selectMemberNo) {
+					case 1:
+						break;
+					case 2:
+						System.out.println("타석 예약");
+						int reservResult = new HioReservInsertController().reservInsert();
+						if(reservResult<0) {
+							System.out.println(reservResult);
+						}
+						
+						break;
+					case 3:
+						break;
+					case 4:
+						break;
+					case 5:
+						break;
+					}
+				}
+				else if(result == 0) {
+					hioAdminMenu();
+					int selectAdminNo = Integer.parseInt(sc.nextLine());
+					switch (selectAdminNo) {
 					case 1:
 						break;
 					case 2:
@@ -35,8 +62,8 @@ public class HioMain {
 					}
 				}
 				break;
-			case 2:
-				new HioInsertController().memberInsert();
+			case 2:	// 회원가입
+				new HioMemberInsertController().memberInsert();
 				break;
 			case 3:
 				System.out.println("홀인원 (스크린 골프 예약 서비스)를 종료 합니다.");
@@ -78,6 +105,7 @@ public class HioMain {
 		System.out.println(" 2. 타석 예약");
 		System.out.println(" 3. 타석 예약 변경");
 		System.out.println(" 4. 타석 예약 취소");
+		System.out.println(" 5. 로그아웃");
 		System.out.println("------------------------------------------------");
 
 	}

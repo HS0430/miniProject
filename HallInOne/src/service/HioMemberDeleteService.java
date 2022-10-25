@@ -2,6 +2,7 @@ package service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import hio.DAO.HioMemberDeleteDAO;
@@ -40,7 +41,7 @@ public class HioMemberDeleteService {
 	
 	public List<HioMember> memberSelectToDelete(){
 		
-		List<HioMember> allList = null;
+		List<HioMember> allList = new ArrayList<>();
 		Connection conn = null;
 		
 		try {
@@ -61,6 +62,31 @@ public class HioMemberDeleteService {
 		}	
 		
 		return allList;
+	}
+	
+public List<HioMember> memberSelectToDeleteRes(){
+		
+		List<HioMember> resultList = new ArrayList<>();
+		Connection conn = null;
+		
+		try {
+			
+			conn = HioConnection.getConnection();
+			resultList = dao.selectToDeleteRes(conn);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}	
+		
+		return resultList;
 	}
 	
 }

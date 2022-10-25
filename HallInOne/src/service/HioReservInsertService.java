@@ -3,22 +3,22 @@ package service;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import hio.DAO.HioInsertDAO;
+import hio.DAO.HioReservInsertDAO;
 import hio.domain.HioMember;
 import util.HioConnection;
 
 
-public class HioInsertService {
-	HioInsertDAO dao = new HioInsertDAO();
+public class HioReservInsertService {
+	HioReservInsertDAO dao = new HioReservInsertDAO();
 	
-	public int memberInsert(HioMember hioMember) {
+	public int reservInsert(HioMember hioMember) {
 		
 		int result = 0;
 		Connection conn = null;
 
 		try {
 			conn = HioConnection.getConnection();
-			result = dao.memberInsert(conn, hioMember);
+			result = dao.reservInsert(conn, hioMember);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -36,4 +36,5 @@ public class HioInsertService {
 		return result;
 		
 	}
+	
 }

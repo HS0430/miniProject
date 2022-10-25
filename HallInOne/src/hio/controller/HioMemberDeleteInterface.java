@@ -2,6 +2,6 @@ package hio.controller;
 
 public interface HioMemberDeleteInterface {
 	
-	public void memberDeletet();
+	public void memberDelete();
 
 }
