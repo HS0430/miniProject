@@ -11,7 +11,7 @@ import service.HioUpdateService;
 public class HioUpdateController implements HioUpdateInterface {
 
 	HioUpdateService service = new HioUpdateService();
-	private HioMember hiomember;
+	private HioMember[] hiomember;
 	
 	public void memberUpdate() {
 		
@@ -22,8 +22,8 @@ public class HioUpdateController implements HioUpdateInterface {
 		List<HioMember> selectResvNo = new HioReservInsertService().selectResvNo(hioMember);
 		
 		System.out.println("-------------------- 예약번호 --------------------");
-		for(HioMember resvNoList : selectResvNo)
-		{
+		for(HioMember resvNoList : selectResvNo) {
+			
 			System.out.print(resvNoList.getReservNo()+"\t");
 		}
 		System.out.println();
@@ -31,20 +31,17 @@ public class HioUpdateController implements HioUpdateInterface {
 		
 		System.out.println("예약번호를 입력해주세요. >> ");
 		int reservNo = Integer.parseInt(getreservNo());
-		
-		System.out.println("변경하실 홀번호를 입력해주세요 >> ");
-		int hallNo = Integer.parseInt(gethallNo());
 
 		System.out.println("변경하실 예약시간을 입력해주세요 >> ");
 		int reservTime = Integer.parseInt(getreservTime());
 		
 
-		int result = service.memberUpdate(new HioMember(hallNo, reservTime, reservNo));
+		int result = service.memberUpdate(new HioMember(reservNo, reservTime));
 
 		if (result > 0) {
 			System.out.println("예약이 변경되었습니다.");
 		} else {
-			System.out.println("변경가능한 시간대를 다시 확인해주세요.");
+			System.out.println("예약번호 및 예약가능 시간대를 다시 확인해주세요.");
 		}
 
 	}
@@ -77,36 +74,6 @@ public class HioUpdateController implements HioUpdateInterface {
 			} 
 		}
 		return reservNo;
-	}
-
-	private String gethallNo() {
-		
-		String hallNo = null;
-		int num = 0;
-		
-		while(true) {
-			
-			try {
-				
-				hallNo = HioMain.sc.nextLine();
-				
-				if(!(hallNo != null && hallNo.trim().length()!=0)) {
-					throw new Exception("공백사용이 불가합니다.\n다시 입력해주세요 >> ");
-				}
-				
-				else if(!Pattern.matches("^[0-9]*$", hallNo)) {
-					throw new Exception("숫자만 입력가능합니다.\n 다시 입력해주세요 >> ");
-				}
-				
-				else {
-					break;
-				}
-					
-			} catch (Exception e) {
-				System.out.println(e.getMessage());
-			} 
-		}
-		return hallNo;
 	}
 
 	private String getreservTime() {
