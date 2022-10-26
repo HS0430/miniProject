@@ -83,6 +83,18 @@ public class HioReservInsertController implements HioReservInsertInterface{
 			hioMember.setReservTime(halltime);
 			
 			result = new HioReservInsertService().reservInsert(hioMember);
+			
+			
+			// 예약 번호 확인
+			List<HioMember> selectResvNo = new HioReservInsertService().selectResvNo(hioMember);
+			
+			System.out.println("-------------------- 예약번호 --------------------");
+			for(HioMember resvNoList : selectResvNo)
+			{
+				System.out.print(resvNoList.getReservNo()+"\t");
+			}
+			System.out.println();
+			System.out.println("------------------------------------------------");
 
 		
 			return result;

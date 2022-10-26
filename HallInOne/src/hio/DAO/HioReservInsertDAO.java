@@ -19,10 +19,6 @@ public class HioReservInsertDAO implements ReservInsertDAO {
 		// 입력 처리
 		String sql = "INSERT INTO RESERVATION VALUES(RESERVNO_SEQ.nextval, ?, ?, SYSDATE, ?)";
 		
-		
-		System.out.println(hioMember.getHallNo());
-		System.out.println(hioMember.getReservTime());
-		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, hioMember.getMemberNo());
@@ -115,6 +111,36 @@ public class HioReservInsertDAO implements ReservInsertDAO {
 				HioMember hioMember = new HioMember();
 				hioMember.setHallNo(rs.getInt("hallno"));
 				hioMember.setReservTime(rs.getInt("reservtime"));
+				list.add(hioMember);
+			}
+		}finally {
+			if(rs != null){
+				rs.close();
+			}
+			if(pstmt != null){
+				pstmt.close();
+			}
+		}
+		
+		return list;
+	}
+	
+	public List<HioMember> selectResvNo(Connection conn, HioMember hioMember) throws SQLException {
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		List<HioMember> list = new ArrayList<>();
+		
+		String sql = "SELECT * FROM RESERVATION WHERE memberno = ? ORDER BY reservno";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, hioMember.getMemberNo());
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				hioMember = new HioMember();
+				hioMember.setReservNo(rs.getInt("reservno"));
 				list.add(hioMember);
 			}
 		}finally {

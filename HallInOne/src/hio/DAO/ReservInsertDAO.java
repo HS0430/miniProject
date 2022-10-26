@@ -11,5 +11,6 @@ public interface ReservInsertDAO {
 	public int reservInsert(Connection conn, HioMember hioMember) throws SQLException;
 	public List<HioMember> selectHallList(Connection conn) throws SQLException;
 	public HioMember selectHallTime(Connection conn, HioMember hioMember, int hallno) throws SQLException;
+	public List<HioMember> selectResvNo(Connection conn, HioMember hioMember) throws SQLException;
 	
 }

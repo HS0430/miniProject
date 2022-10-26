@@ -113,4 +113,29 @@ public class HioReservInsertService {
 		return list;
 	}
 	
+	public List<HioMember> selectResvNo(HioMember hioMember){
+
+		List<HioMember> list = null;
+		Connection conn = null;
+		
+		try {
+			
+			conn = HioConnection.getConnection();
+			list = dao.selectResvNo(conn, hioMember);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return list;
+	}
+	
 }
