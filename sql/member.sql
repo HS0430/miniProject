@@ -1,42 +1,42 @@
-DROP INDEX ONE.PK_member;
+DROP INDEX MY_SCHEMA.PK_member;
 
 /* member */
-DROP TABLE ONE.member 
+DROP TABLE MY_SCHEMA.member 
 	CASCADE CONSTRAINTS;
 
 /* member */
-CREATE TABLE ONE.member (
-	memberNo INTEGER NOT NULL, /* memberNo */
-	memberName VARCHAR2(50), /* memberName */
-	memberAddres VARCHAR2(255), /* memberAddres */
-	memberPhone VARCHAR2(30), /* memberPhone */
-	memberId INTEGER, /* memberId */
-	memberPwd VARCHAR2(50), /* memberPwd */
-	memberGrade INTEGER /* memberGrade */
+CREATE TABLE MY_SCHEMA.member (
+	memberNo INTEGER NOT NULL, /* 회원번호 */
+	memberName VARCHAR2(50), /* 회원명 */
+	memberAddress VARCHAR2(255), /* 회원주소 */
+	memberPhone VARCHAR2(30), /* 회원전화번호 */
+	memberId VARCHAR2(50), /* 회원ID */
+	memberPwd VARCHAR2(50), /* 회원PWD */
+	memberGrade INTEGER /* 회원등급(관리자0,회원1) */
 );
 
-COMMENT ON TABLE ONE.member IS 'member';
+COMMENT ON TABLE MY_SCHEMA.member IS 'member';
 
-COMMENT ON COLUMN ONE.member.memberNo IS 'memberNo';
+COMMENT ON COLUMN MY_SCHEMA.member.memberNo IS '회원번호';
 
-COMMENT ON COLUMN ONE.member.memberName IS 'memberName';
+COMMENT ON COLUMN MY_SCHEMA.member.memberName IS '회원명';
 
-COMMENT ON COLUMN ONE.member.memberAddres IS 'memberAddres';
+COMMENT ON COLUMN MY_SCHEMA.member.memberAddress IS '회원주소';
 
-COMMENT ON COLUMN ONE.member.memberPhone IS 'memberPhone';
+COMMENT ON COLUMN MY_SCHEMA.member.memberPhone IS '회원전화번호';
 
-COMMENT ON COLUMN ONE.member.memberId IS 'memberId';
+COMMENT ON COLUMN MY_SCHEMA.member.memberId IS '회원ID';
 
-COMMENT ON COLUMN ONE.member.memberPwd IS 'memberPwd';
+COMMENT ON COLUMN MY_SCHEMA.member.memberPwd IS '회원PWD';
 
-COMMENT ON COLUMN ONE.member.memberGrade IS 'memberGrade';
+COMMENT ON COLUMN MY_SCHEMA.member.memberGrade IS '회원등급(관리자0,회원1)';
 
-CREATE UNIQUE INDEX ONE.PK_member
-	ON ONE.member (
+CREATE UNIQUE INDEX MY_SCHEMA.PK_member
+	ON MY_SCHEMA.member (
 		memberNo ASC
 	);
 
-ALTER TABLE ONE.member
+ALTER TABLE MY_SCHEMA.member
 	ADD
 		CONSTRAINT PK_member
 		PRIMARY KEY (
