@@ -7,6 +7,7 @@ import hio.controller.HioUpdateController;
 import hio.domain.HioMember;
 import hio.controller.HioAllMemberController;
 import hio.controller.HioAllReservationController;
+import hio.controller.HioHallAdminController;
 import hio.controller.HioHallDeleteController;
 import hio.controller.HioHallReservChkController;
 import hio.controller.HioMemberDeleteController;
@@ -44,7 +45,7 @@ public class HioMain {
 						new HioHallReservChkController().reservChkSelect();
 						break;
 					case 2:	// 예약
-						int reservResult = new HioReservInsertController().reservInsert();
+						new HioReservInsertController().reservInsert();
 						break;
 					case 3:	// 예약 변경
 						new HioUpdateController().memberUpdate();
@@ -73,8 +74,8 @@ public class HioMain {
 						case 1: // 회원 전체 정보 출력
 							new HioAllMemberController().allmember();
 							break;
-						case 2: // 예약 정보 출력
-							new HioAllReservationController().allreservation();
+						case 2: // 타석 관리
+							new HioHallAdminController().hallAdmin();
 							break;
 						case 3:	// 회원 삭제
 							int s = new HioMemberDeleteController().memberDelete();
