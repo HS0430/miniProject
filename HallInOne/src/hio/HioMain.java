@@ -8,6 +8,7 @@ import hio.domain.HioMember;
 import hio.controller.HioAllMemberController;
 import hio.controller.HioAllReservationController;
 import hio.controller.HioHallDeleteController;
+import hio.controller.HioHallReservChkController;
 import hio.controller.HioMemberDeleteController;
 import hio.controller.HioMemberInsertController;
 
@@ -39,6 +40,7 @@ public class HioMain {
 					switch (selectMemberNo) {
 					case 1:
 						// 예약가능 여부 확인
+						new HioHallReservChkController().reservChkSelect();
 						break;
 					case 2:
 						// 예약
