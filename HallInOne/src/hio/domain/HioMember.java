@@ -64,25 +64,6 @@ public class HioMember {
 		this.hallNo = hallNo;
 	}
 
-	
-	
-	public void HioMemberReset() {
-		this.memberNo = 0;
-		this.memberName = null;
-		this.memberAddress = null;
-		this.memberPhone = null;
-		this.memberId = null;
-		this.memberPwd = null;
-		this.memberGrade = 0;
-		this.reservNo = 0;
-		this.reservDate = null;
-		this.reservTime = 0;
-		this.hallNo = 0;
-		this.hallResvYN = null;
-		this.hallsTime = 0;
-		this.halleTime = 0;
-	}
-
 	public int getMemberNo() {
 		return memberNo;
 	}

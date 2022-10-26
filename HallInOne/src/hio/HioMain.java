@@ -38,23 +38,27 @@ public class HioMain {
 					int selectMemberNo = Integer.parseInt(sc.nextLine());
 					switch (selectMemberNo) {
 					case 1:
+						// 예약가능 여부 확인
 						break;
 					case 2:
-						System.out.println("타석 예약");
+						// 예약
 						int reservResult = new HioReservInsertController().reservInsert();
 						if(reservResult<0) {
 							System.out.println(reservResult);
 						}
 						break;
 					case 3:
+						// 예약 변경
 						new HioUpdateController().memberUpdate();
 						break;
 					case 4:
+						// 예약 취소
 						new HioHallDeleteController().hallDelete();
 						break;
 					case 5:
+						// 로그아웃
 						result = -1;
-						hioMember.HioMemberReset();
+						hioMember = new HioMember();
 						break;
 						}
 					}
@@ -79,7 +83,7 @@ public class HioMain {
 							break;
 						case 4:
 							result = -1;
-							hioMember.HioMemberReset();
+							hioMember = new HioMember();
 							break;
 						}
 					}
