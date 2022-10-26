@@ -4,17 +4,13 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-import hio.DAO.AllMemberDao;
+import hio.DAO.HioAllMemberDao;
 import hio.domain.HioMember;
 import util.HioConnection;
 
 public class HioAllMemberService {
 
-	AllMemberDao allmemberdao;
-
-	public HioAllMemberService(AllMemberDao allmemberdao) {
-		this.allmemberdao = allmemberdao;
-	}
+	HioAllMemberDao dao = new HioAllMemberDao();
 
 	public List<HioMember> memberList() {
 
@@ -23,7 +19,7 @@ public class HioAllMemberService {
 
 		try {
 			conn = HioConnection.getConnection();
-			list = allmemberdao.memberList(conn);
+			list = dao.memberList(conn);
 
 		} catch (SQLException e) {
 			// e.printStackTrace();
