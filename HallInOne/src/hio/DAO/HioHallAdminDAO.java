@@ -55,8 +55,8 @@ public class HioHallAdminDAO implements HallAdminDAO {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, YN);
-			pstmt.setInt(2, sTime);
-			pstmt.setInt(3, eTime);
+			pstmt.setInt(2, eTime);
+			pstmt.setInt(3, sTime);
 //			
 			result = pstmt.executeUpdate();
 		}finally {
@@ -100,6 +100,26 @@ public class HioHallAdminDAO implements HallAdminDAO {
 			pstmt.setInt(1, sTime);
 			pstmt.setInt(2, eTime);
 			pstmt.setInt(3, hallNo);
+			
+			result = pstmt.executeUpdate();
+		}finally {
+			if(pstmt != null) {
+				pstmt.close();
+			}
+		}
+		
+		return result;
+	}
+	
+	public int hallDelete(Connection conn, int hallNo) throws SQLException {
+		
+		int result = 0;
+		PreparedStatement pstmt = null;
+		
+		String sql = "DELETE FROM HALL WHERE hallno=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, hallNo);
 			
 			result = pstmt.executeUpdate();
 		}finally {

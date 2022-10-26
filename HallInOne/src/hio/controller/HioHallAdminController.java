@@ -26,7 +26,8 @@ public class HioHallAdminController implements HioHallAdminInterface{
 		System.out.println(" 1. 홀 추가");
 		System.out.println(" 2. 예약 가능 여부 변경");
 		System.out.println(" 3. 이용 시간 변경");
-		System.out.println(" 4. 뒤로가기");
+		System.out.println(" 4. 홀 삭제");
+		System.out.println(" 5. 뒤로가기");
 		System.out.print(" 메뉴 선택 >> ");
 		
 		int selectNo = Integer.parseInt(sc.nextLine());
@@ -43,6 +44,12 @@ public class HioHallAdminController implements HioHallAdminInterface{
 			int etime = Integer.parseInt(sc.nextLine());
 			
 			int result = new HioHallAdminService().hallInsert(YN, stime, etime);
+			if(result>0) {
+				System.out.println("추가가 완료되었습니다.");
+			}
+			else {
+				System.out.println("추가실패");
+			}
 			break;
 		case 2:
 			System.out.print("변경할 홀 번호 입력 >> ");
@@ -52,6 +59,12 @@ public class HioHallAdminController implements HioHallAdminInterface{
 			String YN2 = sc.nextLine();
 			
 			int result2 = new HioHallAdminService().hallYNUpdate(hallno, YN2);
+			if(result2>0) {
+				System.out.println("변경이 완료되었습니다.");
+			}
+			else {
+				System.out.println("변경실패");
+			}
 			break;
 		case 3:
 			System.out.print("변경할 홀 번호 입력 >> ");
@@ -64,8 +77,27 @@ public class HioHallAdminController implements HioHallAdminInterface{
 			int eTime2 = Integer.parseInt(sc.nextLine());
 			
 			int result3 = new HioHallAdminService().hallTimeUpdate(hallno2, sTime2, eTime2);
+			if(result3>0) {
+				System.out.println("변경이 완료되었습니다.");
+			}
+			else {
+				System.out.println("변경실패");
+			}
 			break;
 		case 4:
+			System.out.print("삭제할 홀 번호 입력 >> ");
+			int hallno3 = Integer.parseInt(sc.nextLine());
+			
+			int result4 = new HioHallAdminService().hallDelete(hallno3);
+			
+			if(result4>0) {
+				System.out.println("삭제가 완료되었습니다.");
+			}
+			else {
+				System.out.println("삭제실패");
+			}
+			break;
+		case 5:
 			break;
 		}
 		

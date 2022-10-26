@@ -12,5 +12,6 @@ public interface HallAdminDAO {
 	public int hallInsert(Connection conn, String YN, int sTime, int eTime) throws SQLException;
 	public int hallYNUpdate(Connection conn, int hallNo, String YN) throws SQLException;
 	public int hallTimeUpdate(Connection conn, int hallNo, int sTime, int eTime) throws SQLException;
+	public int hallDelete(Connection conn, int hallNo) throws SQLException;
 	
 }

@@ -114,4 +114,30 @@ public class HioHallAdminService {
 		return result;
 		
 	}
+	
+	public int hallDelete(int hallNo) {
+		
+		int result = 0;
+		Connection conn = null;
+
+		try {
+			conn = HioConnection.getConnection();
+			result = dao.hallDelete(conn, hallNo);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				if(conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return result;
+		
+	}
 }
