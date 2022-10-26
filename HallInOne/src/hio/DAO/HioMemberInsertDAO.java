@@ -59,7 +59,6 @@ public class HioMemberInsertDAO implements MemberInsertDAO {
 			}
 		}
 		
-		System.out.println("select Member Name " + result);
 		return result;
 	}
 	

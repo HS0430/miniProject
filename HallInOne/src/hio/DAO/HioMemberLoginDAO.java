@@ -27,7 +27,6 @@ public class HioMemberLoginDAO implements MemberLoginDAO{
 				result = rs.getInt("membergrade");
 				hioMember.setMemberNo(rs.getInt("memberno"));
 				hioMember.setMemberGrade(rs.getInt("membergrade"));
-				
 			}
 		}finally {
 			if(pstmt != null) {
