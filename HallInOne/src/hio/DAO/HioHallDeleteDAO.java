@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import hio.HioMain;
 import hio.domain.HioMember;
 
 public class HioHallDeleteDAO {
@@ -21,10 +22,12 @@ public class HioHallDeleteDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "select * from reservation";
+		HioMember hioMember = HioMain.hioMember;
+		String sql = "select * from reservation WHERE memberno=? ORDER BY reservno";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, hioMember.getMemberNo());
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -69,7 +72,7 @@ public class HioHallDeleteDAO {
 		int result = 0;
 		PreparedStatement pstmt = null;
 
-		String sql = "delete from hall where hallno=?";
+		String sql = "delete from reservation where reservno=?";
 
 		try {
 

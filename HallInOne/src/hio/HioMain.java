@@ -7,6 +7,7 @@ import hio.controller.HioUpdateController;
 import hio.domain.HioMember;
 import hio.controller.HioAllMemberController;
 import hio.controller.HioAllReservationController;
+import hio.controller.HioHallDeleteController;
 import hio.controller.HioMemberDeleteController;
 import hio.controller.HioMemberInsertController;
 
@@ -23,13 +24,16 @@ public class HioMain {
 			
 			System.out.print("메뉴 선택 >>  ");
 			int selectMainNo = Integer.parseInt(sc.nextLine());
-
+			int result = 9;
 			switch (selectMainNo) {
 			case 1:
-			
-				int result = new HioMemberLoginController().memberLogin();
+				result = new HioMemberLoginController().memberLogin();
 				
 				if (result == 1) {
+					while(true) {
+						if(result == -1) {
+							break;
+						}
 					hioMemberMenu();
 					int selectMemberNo = Integer.parseInt(sc.nextLine());
 					switch (selectMemberNo) {
@@ -46,13 +50,19 @@ public class HioMain {
 						new HioUpdateController().memberUpdate();
 						break;
 					case 4:
+						new HioHallDeleteController().hallDelete();
 						break;
 					case 5:
+						result = -1;
 						break;
+						}
 					}
 				}
 				else if(result == 0) {
 					while (true) {
+						if(result == -1) {
+							break;
+						}
 						hioAdminMenu();
 						int selectAdminNo = Integer.parseInt(sc.nextLine());
 						switch (selectAdminNo) {
@@ -67,11 +77,13 @@ public class HioMain {
 							if (s==0) continue;
 							break;
 						case 4:
+							result = -1;
 							break;
 						}
 					}
 				}
 				break;
+				
 			case 2:	// 회원가입
 				new HioMemberInsertController().memberInsert();
 				break;
