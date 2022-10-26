@@ -54,6 +54,7 @@ public class HioMain {
 						break;
 					case 5:
 						result = -1;
+						hioMember.HioMemberReset();
 						break;
 						}
 					}
@@ -78,6 +79,7 @@ public class HioMain {
 							break;
 						case 4:
 							result = -1;
+							hioMember.HioMemberReset();
 							break;
 						}
 					}
