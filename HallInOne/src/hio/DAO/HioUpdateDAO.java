@@ -15,13 +15,14 @@ public class HioUpdateDAO implements UpdateDAO {
 		int result = 0;
 		PreparedStatement pstmt = null;
 
-		String sql = "UPDATE RESERVATION SET RESERVTIME=? WHERE RESERVNO=?";
+		String sql = "UPDATE RESERVATION SET HALLNO=?, RESERVTIME=? WHERE RESERVNO=?";
 
 		try {
 
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, hioMember.getReservTime());
-			pstmt.setInt(2, hioMember.getReservNo());
+			pstmt.setInt(1, hioMember.getHallNo());
+			pstmt.setInt(2, hioMember.getReservTime());
+			pstmt.setInt(3, hioMember.getReservNo());
 
 			result = pstmt.executeUpdate();
 
