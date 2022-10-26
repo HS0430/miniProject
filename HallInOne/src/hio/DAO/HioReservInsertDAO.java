@@ -32,7 +32,6 @@ public class HioReservInsertDAO implements ReservInsertDAO {
 			}
 		}
 		
-		System.out.println(result);
 		return result;
 	}
 	
