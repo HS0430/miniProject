@@ -28,7 +28,7 @@ public class HioAllMemberDao {
 			while (rs.next()) {
 				
 				list.add(new HioMember(rs.getInt("memberno"), rs.getString("membername"), 
-						rs.getString("memberaddres"), rs.getString("memberphone"), 
+						rs.getString("memberaddress"), rs.getString("memberphone"), 
 						rs.getString("memberid"), rs.getString("memberpwd"), 
 						rs.getInt("membergrade")));
 			}

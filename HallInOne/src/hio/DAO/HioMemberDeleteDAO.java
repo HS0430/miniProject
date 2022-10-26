@@ -48,7 +48,7 @@ public class HioMemberDeleteDAO {
 			while (rs.next()) {
 
 				allList.add(new HioMember(rs.getInt("memberno"), rs.getString("membername"), 
-						rs.getString("memberaddres"), rs.getString("memberphone"), 
+						rs.getString("memberaddress"), rs.getString("memberphone"), 
 						rs.getString("memberid"), rs.getString("memberpwd"), 
 						rs.getInt("membergrade")));
 			}	
@@ -79,7 +79,7 @@ public class HioMemberDeleteDAO {
 			while (rs2.next()) {
 
 				resultList.add(new HioMember(rs2.getInt("memberno"), rs2.getString("membername"), 
-						rs2.getString("memberaddres"), rs2.getString("memberphone"), 
+						rs2.getString("memberaddress"), rs2.getString("memberphone"), 
 						rs2.getString("memberid"), rs2.getString("memberpwd"), 
 						rs2.getInt("membergrade")));
 			}	
