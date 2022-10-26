@@ -4,18 +4,14 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-import hio.DAO.AllReservationDao;
+import hio.DAO.HioAllReservationDao;
 import hio.domain.HioMember;
 import util.HioConnection;
 
 public class HioAllReservationService {
 
-	AllReservationDao allreservationdao;
-
-	public HioAllReservationService(AllReservationDao allreservationdao) {
-		this.allreservationdao = allreservationdao;
-	}
-
+	HioAllReservationDao dao = new HioAllReservationDao();
+	
 	public List<HioMember> selectList() {
 
 		List<HioMember> list = null;
@@ -23,7 +19,7 @@ public class HioAllReservationService {
 
 		try {
 			conn = HioConnection.getConnection();
-			list = allreservationdao.selectList(conn);
+			list = dao.selectList(conn);
 
 		} catch (SQLException e) {
 			// e.printStackTrace();
