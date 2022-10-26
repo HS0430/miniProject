@@ -21,7 +21,7 @@ public class HioAllMemberDao {
 
 		try {
 			
-			String sql = "select * from member";
+			String sql = "select * from member order by memberno";
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 
