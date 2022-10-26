@@ -141,6 +141,7 @@ public class HioReservInsertDAO implements ReservInsertDAO {
 			while(rs.next()){
 				hioMember = new HioMember();
 				hioMember.setReservNo(rs.getInt("reservno"));
+				
 				list.add(hioMember);
 			}
 		}finally {
