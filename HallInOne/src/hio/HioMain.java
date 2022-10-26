@@ -27,9 +27,11 @@ public class HioMain {
 			int selectMainNo = Integer.parseInt(sc.nextLine());
 			int result = 9;
 			switch (selectMainNo) {
+			// 로그인
 			case 1:
 				result = new HioMemberLoginController().memberLogin();
 				
+				// 회원
 				if (result == 1) {
 					while(true) {
 						if(result == -1) {
@@ -38,19 +40,13 @@ public class HioMain {
 					hioMemberMenu();
 					int selectMemberNo = Integer.parseInt(sc.nextLine());
 					switch (selectMemberNo) {
-					case 1:
-						// 예약가능 여부 확인
+					case 1:	// 예약가능 여부 확인
 						new HioHallReservChkController().reservChkSelect();
 						break;
-					case 2:
-						// 예약
+					case 2:	// 예약
 						int reservResult = new HioReservInsertController().reservInsert();
-						if(reservResult<0) {
-							System.out.println(reservResult);
-						}
 						break;
-					case 3:
-						// 예약 변경
+					case 3:	// 예약 변경
 						new HioUpdateController().memberUpdate();
 						break;
 					case 4:
@@ -65,6 +61,7 @@ public class HioMain {
 						}
 					}
 				}
+				// 관리자
 				else if(result == 0) {
 					while (true) {
 						if(result == -1) {
@@ -79,11 +76,11 @@ public class HioMain {
 						case 2: // 예약 정보 출력
 							new HioAllReservationController().allreservation();
 							break;
-						case 3:
+						case 3:	// 회원 삭제
 							int s = new HioMemberDeleteController().memberDelete();
 							if (s==0) continue;
 							break;
-						case 4:
+						case 4:	// 로그아웃
 							result = -1;
 							hioMember = new HioMember();
 							break;
@@ -92,9 +89,12 @@ public class HioMain {
 				}
 				break;
 				
-			case 2:	// 회원가입
+				// 회원가입
+			case 2:	
 				new HioMemberInsertController().memberInsert();
 				break;
+				
+				// 종료
 			case 3:
 				System.out.println("홀인원 (스크린 골프 예약 서비스)를 종료 합니다.");
 				System.out.println("------------------------------------------------");
