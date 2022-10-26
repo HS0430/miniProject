@@ -13,25 +13,20 @@ public class HioHallAdminController implements HioHallAdminInterface{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("-----------------------------------------");
 		System.out.println("---------------- 타석 관리 ----------------");
-		
 		List<HioMember> hallList = new HioHallAdminService().hallAdmin();
-		
 		System.out.println("|\t홀 번호\t예약(Y/N)\t시작시간\t종료시간\t|");
 		for(HioMember hall : hallList) {
-			
-			System.out.println("|\t"+hall.getHallNo()+"\t"+ hall.getHallResvYN()+"\t"+hall.getHallsTime()+"\t"+hall.getHalleTime()+"\t|");
+			System.out.println("|\t"+hall.getHallNo()+"\t"+ hall.getHallResvYN()+
+					"\t"+hall.getHallsTime()+"\t"+hall.getHalleTime()+"\t|");
 		}
 		System.out.println("-----------------------------------------");
-		
 		System.out.println(" 1. 홀 추가");
 		System.out.println(" 2. 예약 가능 여부 변경");
 		System.out.println(" 3. 이용 시간 변경");
 		System.out.println(" 4. 홀 삭제");
 		System.out.println(" 5. 뒤로가기");
 		System.out.print(" 메뉴 선택 >> ");
-		
 		int selectNo = Integer.parseInt(sc.nextLine());
-		
 		switch(selectNo) {
 		case 1:
 			System.out.print("예약 가능 여부를 입력 Y 또는 N >> ");

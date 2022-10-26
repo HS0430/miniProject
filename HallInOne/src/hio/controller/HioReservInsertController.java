@@ -20,25 +20,16 @@ public class HioReservInsertController implements HioReservInsertInterface{
 			
 			System.out.println("------------------------------------------------");
 			System.out.println("-------------------- 타석예약 --------------------");
-			
-			System.out.println(hioMember.getMemberGrade());
-			System.out.println(hioMember.getMemberNo());
-			
 			List<HioMember> hallList = new HioReservInsertService().selectHallList();
 			System.out.println("------------------- 예약가능 홀 -------------------");
-			
 			for(HioMember hio : hallList) {
 				System.out.print("| "+ hio.getHallNo() + "번 홀 |\t");
 			}
 			System.out.println();
-			
 			System.out.print("예약하실 홀 번호를 입력해주세요 >>");
 			int hallno = Integer.parseInt(sc.nextLine());
-			
 			HioMember selectHallTime = new HioReservInsertService().selectHallTime(hioMember, hallno);
-			
 			List<HioMember> resvTimeList =new HioReservInsertService().selectResvTimeList(hallno);
-			
 			int stime = hioMember.getHallsTime();
 			int etime = hioMember.getHalleTime();
 				System.out.println("------------------------------------------------");
@@ -57,13 +48,11 @@ public class HioReservInsertController implements HioReservInsertInterface{
 				
 			}
 				System.out.println("------------------------------------------------");
-			
 			int halltime = 0;
 			boolean chk = false;
 			while(true) {
 				System.out.print("예약하실 시간을 입력해주세요 >>");
 				halltime = Integer.parseInt(sc.nextLine());
-				
 				for(HioMember resvTime : resvTimeList) {
 					if(resvTime.getReservTime() == halltime) {
 						chk = true;
@@ -78,16 +67,11 @@ public class HioReservInsertController implements HioReservInsertInterface{
 					break;
 				}
 			}
-			
 			hioMember.setHallNo(hallno);
 			hioMember.setReservTime(halltime);
-			
 			result = new HioReservInsertService().reservInsert(hioMember);
-			
-			
 			// 예약 번호 확인
 			List<HioMember> selectResvNo = new HioReservInsertService().selectResvNo(hioMember);
-			
 			System.out.println("-------------------- 예약번호 --------------------");
 			for(HioMember resvNoList : selectResvNo)
 			{
@@ -95,8 +79,6 @@ public class HioReservInsertController implements HioReservInsertInterface{
 			}
 			System.out.println();
 			System.out.println("------------------------------------------------");
-
-		
 			return result;
 		}
 }
