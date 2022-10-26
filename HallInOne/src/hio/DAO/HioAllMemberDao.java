@@ -10,10 +10,9 @@ import java.util.List;
 
 import hio.domain.HioMember;
 
-
-public class HioAllMemberDao implements AllMemberDao{
+public class HioAllMemberDao {
 	
-	@Override
+	
 	public List<HioMember> memberList(Connection conn) throws SQLException {
 
 		List<HioMember> list = new ArrayList<>();
@@ -21,14 +20,17 @@ public class HioAllMemberDao implements AllMemberDao{
 		ResultSet rs = null;
 
 		try {
-			stmt = conn.createStatement();
-
+			
 			String sql = "select * from member";
+			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {
 				
-				list.add(rowToHioMember(rs));
+				list.add(new HioMember(rs.getInt("memberno"), rs.getString("membername"), 
+						rs.getString("memberaddres"), rs.getString("memberphone"), 
+						rs.getString("memberid"), rs.getString("memberpwd"), 
+						rs.getInt("membergrade")));
 			}
 		} finally {
 			if (rs != null) {
@@ -42,7 +44,6 @@ public class HioAllMemberDao implements AllMemberDao{
 		return list;
 	}
 
-	@Override
 	public HioMember selectBymemberNo(Connection conn, int memberNo) throws SQLException {
 
 		HioMember hiomember = null;
