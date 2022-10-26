@@ -32,21 +32,21 @@ public class HioUpdateController implements HioUpdateInterface {
 		System.out.println("예약번호를 입력해주세요. >> ");
 		int reservNo = Integer.parseInt(getreservNo());
 
-		System.out.println("변경하실 홀 번호를 입력해주세요 >> ");
-		int hallno = Integer.parseInt(getreservTime());
-		
 		System.out.println("변경하실 예약시간을 입력해주세요 >> ");
-		int reservTime = Integer.parseInt(getreservTime());
 		
+		int reservTime = Integer.parseInt(getreservTime());
+		if(!(reservTime>=10 && reservTime<=18)) {
+			System.out.println("10시부터 18시까지만 예약가능합니다.");
+		}
 
-		int result = service.memberUpdate(new HioMember(reservNo, reservTime, hallno));
+		int result = service.memberUpdate(new HioMember(reservNo, reservTime));
 
 		if (result > 0) {
 			System.out.println("예약이 변경되었습니다.");
 		} else {
 			System.out.println("예약번호 및 예약가능 시간대를 다시 확인해주세요.");
 		}
-
+	
 	}
 	
 	private String getreservNo() {
@@ -95,8 +95,8 @@ public class HioUpdateController implements HioUpdateInterface {
 				}
 				
 				else if(!Pattern.matches("^[0-9]*$", reservTime)) {
-					throw new Exception("숫자만 입력가능합니다.\n 다시 입력해주세요 >> ");
-				}
+					throw new Exception("숫자만 입력가능합니다.\n다시 입력해주세요 >> ");
+				} 
 				
 				else {
 					break;
