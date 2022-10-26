@@ -37,16 +37,21 @@ public class HioUpdateController implements HioUpdateInterface {
 		int reservTime = Integer.parseInt(getreservTime());
 		if(!(reservTime>=10 && reservTime<=18)) {
 			System.out.println("10시부터 18시까지만 예약가능합니다.");
-		}
-
-		int result = service.memberUpdate(new HioMember(reservNo, reservTime));
-
-		if (result > 0) {
-			System.out.println("예약이 변경되었습니다.");
+			
 		} else {
-			System.out.println("예약번호 및 예약가능 시간대를 다시 확인해주세요.");
-		}
+
+			int result = service.memberUpdate(new HioMember(reservNo, reservTime));
 	
+			if (result > 0) {
+				
+				System.out.println("예약이 변경되었습니다.");
+				
+			} else {
+				
+				System.out.println("예약번호 및 예약가능 시간대를 다시 확인해주세요.");
+				
+			} 
+		}
 	}
 	
 	private String getreservNo() {
