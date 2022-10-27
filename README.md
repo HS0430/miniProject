@@ -3,7 +3,7 @@
 * JAVA 
 * DBMS - Oracle
 * SQL
-    * `INSERT, SELECT, UPDATE, DELETE..`
+    `INSERT, SELECT, UPDATE, DELETE..`
 <br><br>
 
 ## 프로젝트 구조
