@@ -43,14 +43,14 @@ Controller > Service > DAO
 >오라클 계정 생성 ('오라클계정생성.txt' 참조)
 
 * 테이블 생성
-> HALL 테이블 생성 ('hall.sql') 
-> MEMBER 테이블 생성('member.sql') 
-> RESERVATION 테이블 생성('reservation.sql')
+> HALL 테이블 생성 ('hall.sql') <br>
+> MEMBER 테이블 생성('member.sql') <br>
+> RESERVATION 테이블 생성('reservation.sql')<br>
 **RESERVATION 테이블은 마지막에 생성(HALL과 MEMBER의 키 = 외래키)
 <br>
 * 시퀀스 생성
-> MEMBERNO_SEQ 생성 ('memberno_seq.sql') 
-> RESERVNO_SEQ 생성('reservno_seq.sql') 
+> MEMBERNO_SEQ 생성 ('memberno_seq.sql') <br>
+> RESERVNO_SEQ 생성('reservno_seq.sql') <br>
 
 <br>
 **2. 관리자 계정 또는 사용자 계정 :**
