@@ -53,14 +53,14 @@ Controller > Service > DAO
 > RESERVNO_SEQ 생성('reservno_seq.sql') <br>
 
 <br>
-**2. 관리자 계정 또는 사용자 계정  :**
-* 쿼리
-'INSERT INTO MEMBER VALUES(
-MEMBERNO_SEQ.nextval, 
-'회원이름', 
-'회원주소', 
-'회원전화번호', 
-'회원ID', 
-'회원비밀번호', 
-'회원등급_0:관리자_1:회원')'
+**2. 관리자 계정 또는 사용자 계정 :** 
+* Query 
+`INSERT INTO MEMBER VALUES(`
+`MEMBERNO_SEQ.nextval, `
+`'회원이름',`
+`'회원주소', `
+`'회원전화번호', `
+`'회원ID', `
+`'회원비밀번호', `
+`'회원등급_0:관리자_1:회원')`
 <br><br>
