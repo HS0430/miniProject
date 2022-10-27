@@ -54,7 +54,7 @@ Controller > Service > DAO
 
 <br>
 **2. 관리자 계정 또는 사용자 계정 :**
-INSERT INTO MEMBER VALUES(
+* INSERT INTO MEMBER VALUES(
 MEMBERNO_SEQ.nextval, 
 '회원이름', 
 '회원주소', 
