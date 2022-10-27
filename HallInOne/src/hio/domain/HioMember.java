@@ -77,8 +77,8 @@ public class HioMember {
 	public String getMemberAddress() {
 		return memberAddress;
 	}
-	public void setMemberAddress(String memberAddres) {
-		this.memberAddress = memberAddres;
+	public void setMemberAddress(String memberAddress) {
+		this.memberAddress = memberAddress;
 	}
 	public String getMemberPhone() {
 		return memberPhone;

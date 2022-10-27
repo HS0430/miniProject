@@ -10,7 +10,7 @@ import java.util.List;
 
 import hio.domain.HioMember;
 
-public class HioAllMemberDao {
+public class HioAllMemberDao implements AllMemberDao{
 	
 	
 	public List<HioMember> memberList(Connection conn) throws SQLException {

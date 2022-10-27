@@ -50,7 +50,7 @@ public class HioHallAdminDAO implements HallAdminDAO {
 		int result = 0;
 		PreparedStatement pstmt = null;
 		
-		String sql = "INSERT INTO HALL VALUES((select MAX(hallno)+1 FROM hall), ?, ?, ?)";
+		String sql = "INSERT INTO HALL VALUES((SELECT NVL(MAX(hallno), 0)+1 FROM hall), ?, ?, ?)";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
