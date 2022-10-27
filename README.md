@@ -54,12 +54,12 @@ Controller > Service > DAO
 
 **2. 관리자 계정 또는 사용자 계정 :** 
 * Query<br> 
-`INSERT INTO MEMBER VALUES(`
-`MEMBERNO_SEQ.nextval, `
-`'회원이름',`
-`'회원주소', `
-`'회원전화번호', `
-`'회원ID', `
-`'회원비밀번호', `
+`INSERT INTO MEMBER VALUES(`<br>
+`MEMBERNO_SEQ.nextval,`<br>
+`'회원이름',`<br>
+`'회원주소',`<br>
+`'회원전화번호',`<br>
+`'회원ID',`<br>
+`'회원비밀번호',`<br>
 `'회원등급_0:관리자_1:회원')`
 <br><br>
