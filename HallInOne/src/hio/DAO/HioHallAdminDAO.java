@@ -55,8 +55,8 @@ public class HioHallAdminDAO implements HallAdminDAO {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, YN);
-			pstmt.setInt(2, eTime);
-			pstmt.setInt(3, sTime);
+			pstmt.setInt(2, sTime);
+			pstmt.setInt(3, eTime);
 //			
 			result = pstmt.executeUpdate();
 		}finally {
