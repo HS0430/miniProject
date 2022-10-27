@@ -46,8 +46,8 @@ Controller > Service > DAO
 > HALL 테이블 생성 ('hall.sql') <br>
 > MEMBER 테이블 생성('member.sql') <br>
 > RESERVATION 테이블 생성('reservation.sql')<br>
-**RESERVATION 테이블은 마지막에 생성(HALL과 MEMBER의 키 = 외래키)
-<br>
+**RESERVATION 테이블은 마지막에 생성(HALL과 MEMBER의 키 = 외래키)<br>
+
 * 시퀀스 생성
 > MEMBERNO_SEQ 생성 ('memberno_seq.sql') <br>
 > RESERVNO_SEQ 생성('reservno_seq.sql') <br>
