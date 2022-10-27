@@ -50,8 +50,9 @@ Controller > Service > DAO
 
 * 시퀀스 생성
 > MEMBERNO_SEQ 생성 ('memberno_seq.sql') <br>
-> RESERVNO_SEQ 생성('reservno_seq.sql') <br><br>
+> RESERVNO_SEQ 생성('reservno_seq.sql') <br>
 
+<br>
 **2. 관리자 계정 또는 사용자 계정 :** 
 * Query<br> 
 `INSERT INTO MEMBER VALUES(`<br>
